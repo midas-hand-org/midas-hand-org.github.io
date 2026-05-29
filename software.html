@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MIDAS Hand | Software</title>
+    <link rel="icon" href="data/favicon-round.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&amp;family=Open+Sans:wght@400;500;600&amp;family=Varela+Round&amp;family=Work+Sans:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-background" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="MIDAS Hand home">
+          <img class="brand-icon" src="data/favicon-round.png" alt="" aria-hidden="true" />
+          MIDAS Hand
+        </a>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="parts.html">Parts</a>
+          <a href="cad.html">CAD</a>
+          <a href="assembly.html">Assembly</a>
+          <div class="nav-dropdown">
+            <button class="nav-parent" type="button" aria-haspopup="true">Software</button>
+            <div class="nav-menu" aria-label="Software pages">
+              <a href="software.html">Overview</a>
+              <a href="https://github.com/midas-hand-org/midas_hand_api" target="_blank" rel="noopener">API</a>
+              <a href="https://github.com/midas-hand-org/midas_hand_mujoco" target="_blank" rel="noopener">MuJoCo</a>
+              <a href="https://github.com/midas-hand-org/midas_hand_retargeter" target="_blank" rel="noopener">Retargeter</a>
+              <a href="https://github.com/midas-hand-org/midas_hand_teleop" target="_blank" rel="noopener">Teleop</a>
+            </div>
+          </div>
+          <a href="citation.html">Citation</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page doc-page">
+      <section class="page-intro">
+        <a class="back-link" href="index.html">Back to overview</a>
+        <p class="eyebrow">Repository docs</p>
+        <h1 class="page-title">Software</h1>
+        <p class="page-lede">
+          The open-source software stack is split into four focused repositories: hardware API, MuJoCo simulation,
+          hand retargeting, and live teleoperation.
+        </p>
+        <a class="btn compact" href="https://github.com/midas-hand-org" target="_blank" rel="noopener">GitHub Org</a>
+      </section>
+
+      <section class="section">
+        <div class="software-grid software-repo-grid">
+          <article id="api" class="software-card software-repo-card">
+            <span class="repo-label">midas_hand_api</span>
+            <h3>MIDAS Hand API</h3>
+            <p>
+              Python interface for the 13-motor Dynamixel hand and Paxini GEN3 tactile sensors. Includes low-level
+              actuator communication, high-level hand commands, homing, calibration, and tactile readout.
+            </p>
+            <a class="btn compact" href="https://github.com/midas-hand-org/midas_hand_api" target="_blank" rel="noopener">Repository</a>
+          </article>
+          <article id="mujoco" class="software-card software-repo-card">
+            <span class="repo-label">midas_hand_mujoco</span>
+            <h3>MuJoCo Simulation</h3>
+            <p>
+              MuJoCo-only whole-hand model with MJCF, URDF, STL meshes, and interactive/headless simulation entrypoints.
+              The non-thumb fingers use closed-loop constraints for PIP-DIP linkage behavior.
+            </p>
+            <a class="btn compact" href="https://github.com/midas-hand-org/midas_hand_mujoco" target="_blank" rel="noopener">Repository</a>
+          </article>
+          <article id="retargeter" class="software-card software-repo-card">
+            <span class="repo-label">midas_hand_retargeter</span>
+            <h3>Retargeter</h3>
+            <p>
+              MIDAS-specific wrappers around dex-retargeting. Owns retargeting configuration, human landmark adapters,
+              output adapters, neutral calibration, tuning knobs, and passive coupling modes.
+            </p>
+            <a class="btn compact" href="https://github.com/midas-hand-org/midas_hand_retargeter" target="_blank" rel="noopener">Repository</a>
+          </article>
+          <article id="teleop" class="software-card software-repo-card">
+            <span class="repo-label">midas_hand_teleop</span>
+            <h3>Teleoperation</h3>
+            <p>
+              MediaPipe webcam wrappers that produce MIDAS retargeting inputs and stream commands to print, MuJoCo, or
+              hardware backends with live calibration and debug visualizations.
+            </p>
+            <a class="btn compact" href="https://github.com/midas-hand-org/midas_hand_teleop" target="_blank" rel="noopener">Repository</a>
+          </article>
+        </div>
+        <div class="software-checkout">
+          <h2 class="section-title">Clone Repositories</h2>
+          <p class="section-copy">
+            Clone the repositories needed for your workflow, then follow each repository README for dependencies, setup,
+            and examples.
+          </p>
+        </div>
+        <pre class="install-snippet"><code>git clone https://github.com/midas-hand-org/midas_hand_api.git
+git clone https://github.com/midas-hand-org/midas_hand_mujoco.git
+git clone https://github.com/midas-hand-org/midas_hand_retargeter.git
+git clone https://github.com/midas-hand-org/midas_hand_teleop.git</code></pre>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

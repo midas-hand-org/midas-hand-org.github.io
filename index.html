@@ -1,45 +1,330 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Midas Hand</title>
-    <style>
-      :root {
-        color-scheme: light dark;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        line-height: 1.5;
-      }
-
-      body {
-        display: grid;
-        min-height: 100vh;
-        margin: 0;
-        place-items: center;
-        padding: 2rem;
-      }
-
-      main {
-        max-width: 42rem;
-      }
-
-      h1 {
-        margin: 0 0 0.5rem;
-        font-size: clamp(2.25rem, 6vw, 4.5rem);
-        line-height: 1;
-      }
-
-      p {
-        margin: 0;
-        color: color-mix(in srgb, currentColor 72%, transparent);
-        font-size: 1.125rem;
-      }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="MIDAS Hand, a Modular low-Impedance Direct-drive Anthropomorphic Sensing Hand, with open-source hardware, CAD, assembly, and software documentation."
+    />
+    <title>MIDAS Hand</title>
+    <link rel="icon" href="data/favicon-round.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&amp;family=Open+Sans:wght@400;500;600&amp;family=Varela+Round&amp;family=Work+Sans:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main>
-      <h1>Midas Hand</h1>
-      <p>Coming soon.</p>
+    <div class="page-background" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="MIDAS Hand home">
+          <img class="brand-icon" src="data/favicon-round.png" alt="" aria-hidden="true" />
+          MIDAS Hand
+        </a>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="parts.html">Parts</a>
+          <a href="cad.html">CAD</a>
+          <a href="assembly.html">Assembly</a>
+          <div class="nav-dropdown">
+            <button class="nav-parent" type="button" aria-haspopup="true">Software</button>
+            <div class="nav-menu" aria-label="Software pages">
+              <a href="software.html">Overview</a>
+              <a href="https://github.com/midas-hand-org/midas_hand_api" target="_blank" rel="noopener">API</a>
+              <a href="https://github.com/midas-hand-org/midas_hand_mujoco" target="_blank" rel="noopener">MuJoCo</a>
+              <a href="https://github.com/midas-hand-org/midas_hand_retargeter" target="_blank" rel="noopener">Retargeter</a>
+              <a href="https://github.com/midas-hand-org/midas_hand_teleop" target="_blank" rel="noopener">Teleop</a>
+            </div>
+          </div>
+          <a href="citation.html">Citation</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="hero section" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Open-source dexterous hand platform</p>
+          <h1 id="hero-title" class="hero-title">MIDAS Hand</h1>
+          <p class="hero-subtitle">Modular low-Impedance Direct-drive Anthropomorphic Sensing Hand.</p>
+          <p class="hero-summary-line">
+            Open-source tactile dexterous hand platform for robot learning, teleoperation, and manipulation research.
+          </p>
+          <p class="authors">Alvin Zhu*, Mingzhang Zhu*, Beom Jun Kim*, Quanyou Wang*, Jose Victor S. H. Ramos*, Dennis Hong</p>
+
+          <div class="hero-actions" role="navigation" aria-label="Primary project links">
+            <a class="btn primary" href="#" aria-label="Paper coming soon">
+              <span class="btn-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M6 2.8h8.3L18 6.5v14.7H6z" />
+                  <path d="M14.3 2.8v3.7H18" />
+                  <path d="M8.8 11h6.4M8.8 14h6.4M8.8 17h4.6" />
+                </svg>
+              </span>
+              Paper (soon)
+            </a>
+            <a class="btn" href="https://github.com/midas-hand-org" target="_blank" rel="noopener" aria-label="MIDAS Hand GitHub organization">
+              <span class="btn-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.4a9.8 9.8 0 0 0-3.1 19.1c.5.1.7-.2.7-.5v-1.8c-2.7.6-3.3-1.1-3.3-1.1-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.6 1.1 1.6 1.1.9 1.5 2.3 1.1 2.9.8.1-.7.3-1.1.6-1.4-2.2-.2-4.4-1.1-4.4-4.8 0-1.1.4-1.9 1-2.6-.1-.2-.4-1.2.1-2.5 0 0 .8-.3 2.6 1a9.2 9.2 0 0 1 4.7 0c1.8-1.3 2.6-1 2.6-1 .5 1.3.2 2.3.1 2.5.6.7 1 1.5 1 2.6 0 3.7-2.2 4.5-4.4 4.8.4.3.7.9.7 1.9V21c0 .3.2.6.7.5A9.8 9.8 0 0 0 12 2.4z"
+                  />
+                </svg>
+              </span>
+              Code
+            </a>
+            <a class="btn" href="cad.html">CAD</a>
+            <a class="btn" href="assembly.html">Assembly</a>
+            <a class="btn" href="#demos">Demos</a>
+          </div>
+        </div>
+
+        <div
+          class="hero-media hero-viewer"
+          data-hero-model="data/cad/hand_wireframe.glb"
+          data-hero-wire-mode="edges"
+          data-hero-edge-angle="18"
+          aria-label="Rotating wireframe render of the MIDAS Hand"
+        >
+          <canvas class="hero-canvas"></canvas>
+          <noscript>
+            <p class="hero-noscript">Enable JavaScript to view the hand render.</p>
+          </noscript>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <h2 class="section-title">Overview</h2>
+        </div>
+        <div class="overview-grid">
+          <article class="overview-copy">
+            <h3 class="subsection-title">Project Summary</h3>
+            <p>
+              MIDAS Hand is a low-cost, anthropomorphic, tactile dexterous hand designed for robot learning research,
+              hardware teleoperation, manipulation experiments, and sim-to-real development.
+            </p>
+            <p>
+              The public release includes CAD exports, printable files, a parts list, assembly documentation, MuJoCo
+              simulation models, and software repositories for control, retargeting, and teleoperation.
+            </p>
+          </article>
+          <div class="spec-grid" aria-label="MIDAS Hand specifications">
+            <article class="spec-item">
+              <span class="spec-label">Total DOF</span>
+              <strong><span data-count-up data-count-target="16">16</span></strong>
+            </article>
+            <article class="spec-item">
+              <span class="spec-label">Active DOF</span>
+              <strong><span data-count-up data-count-target="13">13</span></strong>
+            </article>
+            <article class="spec-item">
+              <span class="spec-label">3-Axis Taxels</span>
+              <strong><span data-count-up data-count-target="283">283</span></strong>
+            </article>
+            <article class="spec-item">
+              <span class="spec-label">Weight</span>
+              <strong><span data-count-up data-count-target="700" data-count-prefix="~" data-count-suffix=" g">~700 g</span></strong>
+            </article>
+            <article class="spec-item">
+              <span class="spec-label">BOM</span>
+              <strong><span data-count-up data-count-target="3" data-count-prefix="~$" data-count-suffix="k">~$3k</span></strong>
+            </article>
+            <article class="spec-item">
+              <span class="spec-label">Build Time</span>
+              <strong><span data-count-up data-count-target="3" data-count-prefix="&lt;" data-count-suffix=" hr">&lt;3 hr</span></strong>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="trailer" class="section">
+        <div class="section-heading">
+          <div>
+            <h2 class="section-title">Full System Trailer</h2>
+            <p class="section-kicker">Dexterous manipulation rollouts demonstrating coordinated hand motion.</p>
+          </div>
+        </div>
+        <div class="trailer-video demo-video">
+          <iframe
+            src="https://www.youtube.com/embed/nTVTRLSyhjI"
+            title="MIDAS Hand full system trailer"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+
+      <section id="demos" class="section">
+        <div class="section-heading">
+          <h2 class="section-title">Demos</h2>
+        </div>
+
+        <div class="demo-grid">
+          <article class="demo-card">
+            <div class="demo-video">
+              <video controls autoplay muted loop playsinline preload="metadata">
+                <source src="data/demo/inhand_tool_manip.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="demo-card-heading">
+              <h3>Dexterous Manipulation</h3>
+              <a class="btn compact demo-code-link" href="https://github.com/midas-hand-org/midas_hand_api" target="_blank" rel="noopener">
+                <span class="btn-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2.4a9.8 9.8 0 0 0-3.1 19.1c.5.1.7-.2.7-.5v-1.8c-2.7.6-3.3-1.1-3.3-1.1-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.6 1.1 1.6 1.1.9 1.5 2.3 1.1 2.9.8.1-.7.3-1.1.6-1.4-2.2-.2-4.4-1.1-4.4-4.8 0-1.1.4-1.9 1-2.6-.1-.2-.4-1.2.1-2.5 0 0 .8-.3 2.6 1a9.2 9.2 0 0 1 4.7 0c1.8-1.3 2.6-1 2.6-1 .5 1.3.2 2.3.1 2.5.6.7 1 1.5 1 2.6 0 3.7-2.2 4.5-4.4 4.8.4.3.7.9.7 1.9V21c0 .3.2.6.7.5A9.8 9.8 0 0 0 12 2.4z"
+                    />
+                  </svg>
+                </span>
+                Code
+              </a>
+            </div>
+            <p>Tool handling, grasping, and in-hand motion.</p>
+          </article>
+          <article class="demo-card">
+            <div class="demo-video">
+              <video controls autoplay muted loop playsinline preload="metadata">
+                <source src="data/demo/tactile_demo.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="demo-card-heading">
+              <h3>Tactile Sensing</h3>
+              <a class="btn compact demo-code-link" href="https://github.com/midas-hand-org/midas_hand_api" target="_blank" rel="noopener">
+                <span class="btn-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2.4a9.8 9.8 0 0 0-3.1 19.1c.5.1.7-.2.7-.5v-1.8c-2.7.6-3.3-1.1-3.3-1.1-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.6 1.1 1.6 1.1.9 1.5 2.3 1.1 2.9.8.1-.7.3-1.1.6-1.4-2.2-.2-4.4-1.1-4.4-4.8 0-1.1.4-1.9 1-2.6-.1-.2-.4-1.2.1-2.5 0 0 .8-.3 2.6 1a9.2 9.2 0 0 1 4.7 0c1.8-1.3 2.6-1 2.6-1 .5 1.3.2 2.3.1 2.5.6.7 1 1.5 1 2.6 0 3.7-2.2 4.5-4.4 4.8.4.3.7.9.7 1.9V21c0 .3.2.6.7.5A9.8 9.8 0 0 0 12 2.4z"
+                    />
+                  </svg>
+                </span>
+                Code
+              </a>
+            </div>
+            <p>Sensor response and contact feedback.</p>
+          </article>
+          <article class="demo-card">
+            <div class="demo-video">
+              <button
+                class="video-poster"
+                type="button"
+                data-youtube-video
+                data-youtube-autoplay="true"
+                data-youtube-src="https://www.youtube.com/embed/D4jDOEbjRys?vq=hd1080"
+                data-youtube-title="Rollout demo"
+                aria-label="Play rollout demo"
+              >
+                <img src="data/video-thumbnails/rollout-demo.jpg" alt="Rollout demo thumbnail" loading="lazy" decoding="async" />
+                <span class="video-poster-play" aria-hidden="true"></span>
+              </button>
+            </div>
+            <h3>Rollouts</h3>
+            <p>Dexterous manipulation rollouts demonstrating coordinated hand motion.</p>
+          </article>
+          <article class="demo-card">
+            <div class="demo-video">
+              <video controls autoplay muted loop playsinline preload="metadata">
+                <source src="data/demo/vision_hardware_retargeting.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="demo-card-heading">
+              <h3>Teleoperation</h3>
+              <a class="btn compact demo-code-link" href="https://github.com/midas-hand-org/midas_hand_teleop" target="_blank" rel="noopener">
+                <span class="btn-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2.4a9.8 9.8 0 0 0-3.1 19.1c.5.1.7-.2.7-.5v-1.8c-2.7.6-3.3-1.1-3.3-1.1-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.6 1.1 1.6 1.1.9 1.5 2.3 1.1 2.9.8.1-.7.3-1.1.6-1.4-2.2-.2-4.4-1.1-4.4-4.8 0-1.1.4-1.9 1-2.6-.1-.2-.4-1.2.1-2.5 0 0 .8-.3 2.6 1a9.2 9.2 0 0 1 4.7 0c1.8-1.3 2.6-1 2.6-1 .5 1.3.2 2.3.1 2.5.6.7 1 1.5 1 2.6 0 3.7-2.2 4.5-4.4 4.8.4.3.7.9.7 1.9V21c0 .3.2.6.7.5A9.8 9.8 0 0 0 12 2.4z"
+                    />
+                  </svg>
+                </span>
+                Code
+              </a>
+            </div>
+            <p>Vision-based hardware retargeting and operator control demo.</p>
+          </article>
+          <article class="demo-card">
+            <div class="demo-video">
+              <video controls autoplay muted loop playsinline preload="metadata">
+                <source src="data/demo/hardware_test.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <h3>Hardware Test</h3>
+            <p>Full length repeatability test for hardware consistency and robustness.</p>
+          </article>
+          <article class="demo-card">
+            <div class="demo-video">
+              <video controls autoplay muted loop playsinline preload="metadata">
+                <source src="data/demo/sim_sync_hardware_10s.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="demo-card-heading">
+              <h3>Simulation</h3>
+              <a class="btn compact demo-code-link" href="https://github.com/midas-hand-org/midas_hand_mujoco" target="_blank" rel="noopener">
+                <span class="btn-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2.4a9.8 9.8 0 0 0-3.1 19.1c.5.1.7-.2.7-.5v-1.8c-2.7.6-3.3-1.1-3.3-1.1-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.6 1.1 1.6 1.1.9 1.5 2.3 1.1 2.9.8.1-.7.3-1.1.6-1.4-2.2-.2-4.4-1.1-4.4-4.8 0-1.1.4-1.9 1-2.6-.1-.2-.4-1.2.1-2.5 0 0 .8-.3 2.6 1a9.2 9.2 0 0 1 4.7 0c1.8-1.3 2.6-1 2.6-1 .5 1.3.2 2.3.1 2.5.6.7 1 1.5 1 2.6 0 3.7-2.2 4.5-4.4 4.8.4.3.7.9.7 1.9V21c0 .3.2.6.7.5A9.8 9.8 0 0 0 12 2.4z"
+                    />
+                  </svg>
+                </span>
+                Code
+              </a>
+            </div>
+            <p>Hardware-synchronized MuJoCo simulation view for the simplified MIDAS Hand model.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <h2 class="section-title">Release Pages</h2>
+          <p class="section-kicker">Open-source documentation map</p>
+        </div>
+        <div class="directory-grid">
+          <a class="directory-card" href="parts.html">
+            <span class="release-index">01</span>
+            <h3>Parts</h3>
+            <p>BOM, vendors, quantities, alternates, fabrication notes, and required tools.</p>
+          </a>
+          <a class="directory-card" href="cad.html">
+            <span class="release-index">02</span>
+            <h3>CAD</h3>
+            <p>Onshape source, whole-hand STEP, printable 3MF plates, URDF, and model version notes.</p>
+          </a>
+          <a class="directory-card" href="assembly.html">
+            <span class="release-index">03</span>
+            <h3>Assembly</h3>
+            <p>Build order, subassemblies, assembly videos, calibration notes, and troubleshooting.</p>
+          </a>
+          <a class="directory-card" href="software.html">
+            <span class="release-index">04</span>
+            <h3>Software</h3>
+            <p>API, MuJoCo simulation, retargeting, teleoperation, examples, and installation flow.</p>
+          </a>
+          <a class="directory-card" href="citation.html">
+            <span class="release-index">05</span>
+            <h3>Citation</h3>
+            <p>Hardware, software, and documentation license terms with citation and attribution guidance.</p>
+          </a>
+        </div>
+      </section>
     </main>
+
+    <script src="script.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="hero-viewer.js"></script>
   </body>
 </html>

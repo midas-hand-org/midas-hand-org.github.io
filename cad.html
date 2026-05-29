@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MIDAS Hand | CAD</title>
+    <link rel="icon" href="data/favicon-round.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&amp;family=Open+Sans:wght@400;500;600&amp;family=Varela+Round&amp;family=Work+Sans:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-background" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="MIDAS Hand home">
+          <img class="brand-icon" src="data/favicon-round.png" alt="" aria-hidden="true" />
+          MIDAS Hand
+        </a>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="parts.html">Parts</a>
+          <a href="cad.html">CAD</a>
+          <a href="assembly.html">Assembly</a>
+          <div class="nav-dropdown">
+            <button class="nav-parent" type="button" aria-haspopup="true">Software</button>
+            <div class="nav-menu" aria-label="Software pages">
+              <a href="software.html">Overview</a>
+              <a href="https://github.com/midas-hand-org/midas_hand_api" target="_blank" rel="noopener">API</a>
+              <a href="https://github.com/midas-hand-org/midas_hand_mujoco" target="_blank" rel="noopener">MuJoCo</a>
+              <a href="https://github.com/midas-hand-org/midas_hand_retargeter" target="_blank" rel="noopener">Retargeter</a>
+              <a href="https://github.com/midas-hand-org/midas_hand_teleop" target="_blank" rel="noopener">Teleop</a>
+            </div>
+          </div>
+          <a href="citation.html">Citation</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page doc-page cad-page">
+      <section class="page-intro">
+        <a class="back-link" href="index.html">Back to overview</a>
+        <p class="eyebrow">Mechanical files</p>
+        <h1 class="page-title">CAD</h1>
+        <p class="page-lede">
+          Preview the full hand assembly in the browser, and access the source CAD and release exports through the
+          licensed file blocks below.
+        </p>
+        <a class="btn compact" href="#cad-release-files">Jump to release files</a>
+      </section>
+
+      <section class="section cad-viewer-section">
+        <div
+          class="cad-viewer"
+          data-cad-model="data/cad/Right_Hand_Assembly.glb"
+          aria-label="Interactive 3D CAD viewer for the Midas right hand assembly"
+        >
+          <canvas class="cad-canvas"></canvas>
+          <div class="cad-toolbar" aria-label="CAD viewer controls">
+            <button
+              class="cad-tool is-active"
+              type="button"
+              data-cad-action="rotate"
+              aria-label="Toggle auto-rotate"
+              aria-pressed="true"
+              title="Toggle auto-rotate"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M20 11a8 8 0 0 0-14.8-4.2" />
+                <path d="M4 4v5h5" />
+                <path d="M4 13a8 8 0 0 0 14.8 4.2" />
+                <path d="M20 20v-5h-5" />
+              </svg>
+            </button>
+            <button
+              class="cad-tool"
+              type="button"
+              data-cad-action="reset"
+              aria-label="Reset view"
+              title="Reset view"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M3 12a9 9 0 1 0 3-6.7" />
+                <path d="M3 3v6h6" />
+              </svg>
+            </button>
+          </div>
+          <div class="cad-status" role="status" data-cad-status>Loading CAD...</div>
+          <noscript>
+            <p class="cad-noscript">Enable JavaScript to view the CAD preview.</p>
+          </noscript>
+        </div>
+      </section>
+
+      <section class="section anchor-section" id="cad-release-files">
+        <div class="section-heading">
+          <div>
+            <h2 class="section-title">CAD Release Files</h2>
+            <p class="section-kicker">CAD and mechanical exports are released under CERN-OHL-P-2.0.</p>
+          </div>
+        </div>
+
+        <div class="cad-release-grid">
+          <article class="cad-release-card">
+            <span class="release-index">Source</span>
+            <h3>Onshape</h3>
+            <p>View mode of the source CAD workspace. Make a copy to inspect the assembly and develop your own changes.</p>
+            <span class="cad-release-spacer" aria-hidden="true"></span>
+            <button
+              class="btn compact"
+              type="button"
+              data-gated-asset
+              data-asset-title="Onshape workspace"
+              data-asset-url="https://cad.onshape.com/documents/77f88cdb5968e438112c92f5/v/c98f05d28c65fc3cba8c7cf6/e/9b4fbfc7ad6b290516259890?showReturnToWorkspaceLink=true"
+              data-asset-action="open"
+            >Open Onshape</button>
+          </article>
+
+          <article class="cad-release-card">
+            <span class="release-index">STEP</span>
+            <h3>Whole Hand</h3>
+            <p>STEP file export of the whole hand.</p>
+            <span class="cad-release-spacer" aria-hidden="true"></span>
+            <button
+              class="btn compact"
+              type="button"
+              data-gated-asset
+              data-asset-title="Whole-hand STEP"
+              data-asset-url="https://drive.google.com/uc?export=download&amp;id=1_KcX3wh2XLXMfi233odvl-5opAglAAh3"
+              data-asset-filename="Right_Hand_Assembly.step"
+              data-asset-action="download"
+            >Download STEP</button>
+          </article>
+
+          <article class="cad-release-card">
+            <span class="release-index">3MF</span>
+            <h3>Bambu 3MF</h3>
+            <p>
+              Printer-ready Bambu Lab plates tested on a Bambu Lab X1C with a 0.4 mm hotend nozzle.
+            </p>
+            <a class="inline-guide-link" href="https://youtu.be/w11uyCZRtQY" target="_blank" rel="noopener">Tolerancing guide video</a>
+            <button
+              class="btn compact"
+              type="button"
+              data-gated-asset
+              data-asset-title="Bambu 3MF package"
+              data-asset-url="https://drive.google.com/uc?export=download&amp;id=14vvAxNZlIkaA5PynW53nXllJ382IE7gY"
+              data-asset-filename="MIDAS_ready_to_print_bambu.zip"
+              data-asset-action="download"
+            >Download 3MF</button>
+          </article>
+
+          <article class="cad-release-card">
+            <span class="release-index">URDF</span>
+            <h3>Robot Model</h3>
+            <p>URDF robot description for the MIDAS Hand model.</p>
+            <span class="cad-release-spacer" aria-hidden="true"></span>
+            <button
+              class="btn compact"
+              type="button"
+              data-gated-asset
+              data-asset-title="MIDAS Hand URDF"
+              data-asset-url="https://drive.google.com/uc?export=download&amp;id=1-t7wZHc64ZNpSNrq2htDqdfQv-eIbcbt"
+              data-asset-filename="midas_hand_urdf.urdf"
+              data-asset-action="download"
+            >Download URDF</button>
+          </article>
+        </div>
+
+        <div class="cad-print-notes">
+          <div>
+            <p class="eyebrow">Print package</p>
+            <h3>Bambu Lab 3MF Notes</h3>
+            <p>
+              The included .3mf files are prepared and tested using a Bambu Lab X1C with a 0.4 mm hotend nozzle.
+              Print settings, part orientation, and plate layout are based on that setup.
+            </p>
+            <p>
+              The tested material setup uses Bambu PLA Basic for rigid structural parts and Bambu TPU 95A HF for
+              flexible cover parts.
+            </p>
+          </div>
+          <div>
+            <h4>Included plates</h4>
+            <ul>
+              <li><strong>Thumb_Parts</strong> includes all parts required for the thumb.</li>
+              <li><strong>Finger_Parts</strong> includes all parts required for one finger and can be used for the index, middle, and ring fingers. For a full hand, this plate needs to be printed 3 times.</li>
+              <li><strong>Palm_Parts_1</strong> includes the palm base, small wire fixtures, square washers, and the assembly jig.</li>
+              <li><strong>Palm_Parts_2</strong> includes the remaining PLA parts used on the palm.</li>
+              <li><strong>Palm_TPU</strong> includes the TPU palm cover.</li>
+              <li><strong>TPU_Tip</strong> is an <u>optional</u> print to use in place of Paxini sensors.</li>
+            </ul>
+          </div>
+          <p class="cad-print-warning">
+            Check and adjust slicing settings for your own printer, filament, nozzle size, and calibration before
+            printing. Review part orientation, support settings, and material assignment before starting a build.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <div class="license-modal" data-license-modal hidden>
+      <section
+        class="license-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="license-title"
+        aria-describedby="license-copy"
+      >
+        <form
+          data-license-form
+          data-google-form-action="https://docs.google.com/forms/d/e/1FAIpQLSf4VhMfKKtrwLqSH8mw-vRGfySdwsrfLzQkDDSYY6Bg-uzNzQ/formResponse"
+          data-entry-name="entry.134206390"
+          data-entry-email="entry.1322019953"
+          data-entry-organization="entry.584883385"
+          data-entry-asset="entry.827972109"
+        >
+          <div class="license-header">
+            <p class="eyebrow">CAD access</p>
+            <h2 id="license-title">CERN-OHL-P-2.0 CAD License</h2>
+            <p id="license-copy">
+              MIDAS Hand CAD, mechanical exports, BOM, and assembly design materials are released under the CERN Open
+              Hardware Licence Version 2 - Permissive. You may use, study, modify, make, and distribute the designs,
+              including commercially, provided you comply with the notice and license requirements. Files are provided
+              as-is, without warranty.
+            </p>
+            <p class="license-asset" data-license-asset>Selected asset</p>
+          </div>
+
+          <div class="license-form-grid">
+            <label>
+              Name
+              <input name="name" type="text" autocomplete="name" required />
+            </label>
+            <label>
+              Email
+              <input name="email" type="email" autocomplete="email" required />
+            </label>
+            <label>
+              Organization
+              <input name="organization" type="text" autocomplete="organization" required />
+            </label>
+          </div>
+
+          <label class="license-check">
+            <input name="agreement" type="checkbox" required />
+            <span>I have read and agree to the CERN-OHL-P-2.0 terms for the selected MIDAS Hand CAD asset.</span>
+          </label>
+
+          <p class="license-status" data-license-status hidden></p>
+
+          <div class="license-actions">
+            <button class="btn compact" type="button" data-license-cancel>Cancel</button>
+            <button class="btn compact primary" type="submit">Continue</button>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="cad-viewer.js"></script>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MIDAS Hand | Citation</title>
+    <link rel="icon" href="data/favicon-round.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&amp;family=Open+Sans:wght@400;500;600&amp;family=Varela+Round&amp;family=Work+Sans:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-background" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="MIDAS Hand home">
+          <img class="brand-icon" src="data/favicon-round.png" alt="" aria-hidden="true" />
+          MIDAS Hand
+        </a>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="parts.html">Parts</a>
+          <a href="cad.html">CAD</a>
+          <a href="assembly.html">Assembly</a>
+          <div class="nav-dropdown">
+            <button class="nav-parent" type="button" aria-haspopup="true">Software</button>
+            <div class="nav-menu" aria-label="Software pages">
+              <a href="software.html">Overview</a>
+              <a href="https://github.com/midas-hand-org/midas_hand_api" target="_blank" rel="noopener">API</a>
+              <a href="https://github.com/midas-hand-org/midas_hand_mujoco" target="_blank" rel="noopener">MuJoCo</a>
+              <a href="https://github.com/midas-hand-org/midas_hand_retargeter" target="_blank" rel="noopener">Retargeter</a>
+              <a href="https://github.com/midas-hand-org/midas_hand_teleop" target="_blank" rel="noopener">Teleop</a>
+            </div>
+          </div>
+          <a href="citation.html">Citation</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page doc-page">
+      <section class="page-intro">
+        <a class="back-link" href="index.html">Back to overview</a>
+        <h1 class="page-title">Citation</h1>
+      </section>
+
+      <section class="section citation-card">
+        <h2 class="section-title">Cite MIDAS Hand</h2>
+        <p class="section-copy">
+          Please cite MIDAS Hand if you found this work useful. A full paper citation will be added when available.
+        </p>
+        <pre><code>@misc{midas_hand_2026,
+  title        = {MIDAS Hand: An Open-Source Tactile Dexterous Robotic Hand Platform},
+  author       = {Zhu, Alvin and Zhu, Mingzhang and Kim, Beom Jun and Wang, Quanyou and Ramos, Jose Victor S. H. and Hong, Dennis},
+  year         = {2026},
+  note         = {Public release website},
+  url          = {https://midas-hand.com}
+}</code></pre>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <div>
+            <h2 class="section-title">Licensing</h2>
+          </div>
+        </div>
+
+        <div class="license-grid">
+          <article class="license-card">
+            <span class="release-index">Hardware / CAD</span>
+            <h3>CERN-OHL-P-2.0</h3>
+            <p>
+              Applies to CAD, STEP, 3MF, URDF/mechanical descriptions, BOM, and assembly design materials. Derivative
+              hardware designs may be used, modified, made, and distributed under the permissive open hardware terms.
+            </p>
+            <a href="https://opensource.org/license/cern-ohl-p-2-0" target="_blank" rel="noopener">License text</a>
+          </article>
+
+          <article class="license-card">
+            <span class="release-index">Software</span>
+            <h3>MIT</h3>
+            <p>
+              Applies to MIDAS Hand API, MuJoCo, retargeting, teleoperation, and related software repositories unless a
+              repository states otherwise.
+            </p>
+            <a href="https://opensource.org/license/mit" target="_blank" rel="noopener">License text</a>
+          </article>
+
+          <article class="license-card">
+            <span class="release-index">Website / Docs</span>
+            <h3>CC BY 4.0</h3>
+            <p>
+              Applies to website text, documentation prose, and non-build media unless otherwise noted. Build-critical
+              hardware materials remain covered by CERN-OHL-P-2.0.
+            </p>
+            <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">License text</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <div>
+            <h2 class="section-title">Release Assets</h2>
+          </div>
+        </div>
+        <div class="license-grid">
+          <article class="license-card">
+            <span class="release-index">Hardware</span>
+            <h3>CAD and Printable Files</h3>
+            <p>Onshape source, STEP, Bambu 3MF, URDF, and printing notes are maintained on the CAD page.</p>
+            <a href="cad.html#cad-release-files">Open CAD page</a>
+          </article>
+          <article class="license-card">
+            <span class="release-index">BOM</span>
+            <h3>Parts to Buy</h3>
+            <p>Bill of materials, purchase links, and ordering notes live with the parts guide.</p>
+            <a href="parts.html">Open parts page</a>
+          </article>
+          <article class="license-card">
+            <span class="release-index">Code</span>
+            <h3>Software Repositories</h3>
+            <p>API, MuJoCo simulation, retargeting, and teleoperation repositories are listed on the software page.</p>
+            <a href="software.html">Open software page</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
